@@ -55,4 +55,35 @@ $(document).ready(function(){
         })
     });
 
+    // Validate
+
+    function validateForms (form) {
+        $(form).validate({
+            rules: {
+                name: "required",
+                phone: "required",
+                email: {
+                    required: true,
+                    email: true
+                }
+            },
+            messages: {
+                name: "Пожалуйста, введите Ваше имя",
+                phone: "Пожалуйста, введите Ваш номер телефона",
+                email: {
+                    required: "Пожалуйста, введите Вашу почту",
+                    email: "Неправильно введена почта"
+                }
+            }
+        });
+    }
+
+    validateForms ('#consultation-form');
+    validateForms ('#consultation form');
+    validateForms ('#order form');
+
+    // Masked input
+
+    $('input[name=phone]').mask("+375 (99) 999-99-99");
+
 });
