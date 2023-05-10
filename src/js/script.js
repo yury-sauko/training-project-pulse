@@ -15,6 +15,8 @@ document.querySelector('.next').addEventListener('click', function () {
     slider.goTo('next');
 });
 
+// jQuery
+
 $(document).ready(function(){
 
     // Tabs
@@ -108,4 +110,21 @@ $(document).ready(function(){
         return false;
     });
 
+    // fadeIn & fadeOut to top + smooth scroll
+
+    $(window).scroll(function() {
+        if ($(this).scrollTop() > 800) {
+            $('.to-top').fadeIn('slow');
+        } else {
+            $('.to-top').fadeOut('slow');
+        }
+    });
+
+    $('a[href^="#"]').click(function() {
+        const _href = $(this).attr('href');
+        $('html, body').animate({scrollTop: $(_href).offset().top+'px'}, 800);
+        return false;
+    });
+
+// End $(document).ready
 });
