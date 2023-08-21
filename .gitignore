@@ -2,6 +2,7 @@
 
 # personal authorization data
 src/mailer/smart.php
+dist/mailer/smart.php
 
 # dependencies
 /node_modules
